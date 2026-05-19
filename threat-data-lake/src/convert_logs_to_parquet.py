@@ -6,8 +6,6 @@ machine learning lifecycle:
 
 raw security events -> tabular dataset -> efficient Parquet file
 
-The goal is not advanced modeling yet. The goal is to understand how raw
-security logs become durable, queryable, model-ready data.
 """
 
 from __future__ import annotations
@@ -33,7 +31,7 @@ def generate_synthetic_threat_events(row_count: int = 100) -> list[dict[str, obj
     """
     Generate synthetic cybersecurity events.
 
-    Each event is intentionally simple. Later days will add validation,
+    Each event is intentionally simple. TODO: will add validation,
     labeling, feature engineering, and model training.
 
     Args:
@@ -121,9 +119,6 @@ def convert_csv_to_parquet(csv_path: Path, parquet_path: Path) -> None:
     """
     Convert a CSV file into Parquet.
 
-    Parquet is useful for curated ML datasets because it is compressed,
-    columnar, and efficient for analytics engines such as Athena.
-
     Args:
         csv_path: Path to the source CSV file.
         parquet_path: Path where the Parquet output should be written.
@@ -144,7 +139,7 @@ def convert_csv_to_parquet(csv_path: Path, parquet_path: Path) -> None:
 
 def print_dataset_summary(csv_path: Path, parquet_path: Path) -> None:
     """
-    Print a short summary so the learner can inspect what was created.
+    Print a short summary so we can inspect what was created.
 
     Args:
         csv_path: Path to the generated CSV file.
@@ -171,7 +166,7 @@ def print_dataset_summary(csv_path: Path, parquet_path: Path) -> None:
 
 def main() -> None:
     """
-    Run the local Day 1 data lake build.
+    Run the data lake build.
     """
 
     events = generate_synthetic_threat_events(row_count=100_000)
