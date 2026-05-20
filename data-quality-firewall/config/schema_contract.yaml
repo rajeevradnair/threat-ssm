@@ -1,0 +1,49 @@
+dataset_name: sentinelforge_threat_events
+dataset_owner: sentinelforge-ml-platform
+contract_version: "1.0"
+
+required_columns:
+  - event_id
+  - event_timestamp
+  - event_type
+  - user_id
+  - source_ip
+  - country
+  - device_id
+  - failed_login_count_1h
+  - bytes_out
+  - risk_score
+  - label
+  - producer
+
+allowed_event_types:
+  - auth.login
+  - auth.mfa_challenge
+  - firewall.connection
+  - dns.query
+  - endpoint.process
+  - cloudtrail.api_call
+
+allowed_labels:
+  - benign
+  - suspicious
+  - malicious
+
+numeric_rules:
+  failed_login_count_1h:
+    min: 0
+    max: 100
+  bytes_out:
+    min: 0
+    max: 10000000000
+  risk_score:
+    min: 0.0
+    max: 1.0
+
+quality_thresholds:
+  max_duplicate_event_id_count: 0
+  max_invalid_timestamp_count: 0
+  max_missing_required_value_count: 0
+  max_invalid_label_count: 0
+  max_invalid_event_type_count: 0
+  max_invalid_numeric_value_count: 0

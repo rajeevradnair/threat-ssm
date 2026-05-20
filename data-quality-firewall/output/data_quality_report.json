@@ -1,0 +1,96 @@
+{
+  "dataset_name": "sentinelforge_threat_events",
+  "contract_version": "1.0",
+  "record_count": 500,
+  "passed": true,
+  "checks": [
+    {
+      "check_name": "required_columns",
+      "passed": true,
+      "missing_columns": [],
+      "unexpected_columns": []
+    },
+    {
+      "check_name": "missing_required_values",
+      "passed": true,
+      "total_missing_required_values": 0,
+      "missing_counts_by_column": {
+        "event_id": 0,
+        "event_timestamp": 0,
+        "event_type": 0,
+        "user_id": 0,
+        "source_ip": 0,
+        "country": 0,
+        "device_id": 0,
+        "failed_login_count_1h": 0,
+        "bytes_out": 0,
+        "risk_score": 0,
+        "label": 0,
+        "producer": 0
+      },
+      "threshold": 0
+    },
+    {
+      "check_name": "duplicate_event_ids",
+      "passed": true,
+      "duplicate_event_id_count": 0,
+      "duplicate_event_ids": []
+    },
+    {
+      "check_name": "valid_timestamps",
+      "passed": true,
+      "invalid_timestamp_count": 0,
+      "invalid_examples": []
+    },
+    {
+      "check_name": "allowed_labels",
+      "passed": true,
+      "invalid_label_count": 0,
+      "allowed_labels": [
+        "benign",
+        "malicious",
+        "suspicious"
+      ],
+      "invalid_label_examples": []
+    },
+    {
+      "check_name": "allowed_event_types",
+      "passed": true,
+      "invalid_event_type_count": 0,
+      "allowed_event_types": [
+        "auth.login",
+        "auth.mfa_challenge",
+        "cloudtrail.api_call",
+        "dns.query",
+        "endpoint.process",
+        "firewall.connection"
+      ],
+      "invalid_event_type_examples": []
+    },
+    {
+      "check_name": "numeric_ranges",
+      "passed": true,
+      "total_invalid_numeric_values": 0,
+      "violations": {
+        "failed_login_count_1h": {
+          "invalid_count": 0,
+          "min_allowed": 0,
+          "max_allowed": 100,
+          "invalid_examples": []
+        },
+        "bytes_out": {
+          "invalid_count": 0,
+          "min_allowed": 0,
+          "max_allowed": 10000000000,
+          "invalid_examples": []
+        },
+        "risk_score": {
+          "invalid_count": 0,
+          "min_allowed": 0.0,
+          "max_allowed": 1.0,
+          "invalid_examples": []
+        }
+      }
+    }
+  ]
+}
