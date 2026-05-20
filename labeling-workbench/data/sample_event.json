@@ -1,0 +1,12 @@
+{
+    "event_id": "evt-000001",
+    "event_timestamp": "2026-05-19T10:15:02",
+    "event_type": "auth.login",
+    "user_id": "user-0142",
+    "source_ip": "10.2.44.91",
+    "country": "RU",
+    "failed_login_count_1h": 14,
+    "bytes_out": 0,
+    "risk_score": 0.86,
+    "analyst_context": "Multiple failed logins from unusual country followed by successful login attempt."
+}

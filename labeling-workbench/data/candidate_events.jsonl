@@ -1,0 +1,5 @@
+{"event_id":"evt-000001","event_type":"auth.login","country":"RU","failed_login_count_1h":14,"bytes_out":0,"risk_score":0.86,"analyst_context":"Multiple failed logins from unusual country followed by successful login attempt."}
+{"event_id":"evt-000002","event_type":"firewall.connection","country":"US","failed_login_count_1h":0,"bytes_out":2500000,"risk_score":0.81,"analyst_context":"Large outbound transfer from internal host to unusual destination."}
+{"event_id":"evt-000003","event_type":"dns.query","country":"US","failed_login_count_1h":0,"bytes_out":0,"risk_score":0.63,"analyst_context":"Repeated DNS query to newly observed suspicious domain."}
+{"event_id":"evt-000004","event_type":"auth.login","country":"US","failed_login_count_1h":1,"bytes_out":0,"risk_score":0.08,"analyst_context":"Normal login from usual geography with low failed attempts."}
+{"event_id":"evt-000005","event_type":"endpoint.process","country":"US","failed_login_count_1h":0,"bytes_out":4000,"risk_score":0.72,"analyst_context":"Unusual process spawned command shell and contacted rare domain."}
